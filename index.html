@@ -79,7 +79,7 @@
                 <p>
                     When you think about it, code is just text, and another type of domain-specific language.
                     The <b>open source Structurizr client libraries</b> allow you to create your software architecture model, and associated documentation, via code.
-                    For example, using Java:
+                    For example, using Structurizr for Java:
                 </p>
 
                 <br />
@@ -110,7 +110,7 @@
                 <br />
 
                 <p>
-                    This program creates a model containing elements and relationships, creates a single view, adds some styling, and uploads it to the Structurizr cloud service via the <a href="https://structurizr.com/help/web-api">JSON-based web API</a>.
+                    This program creates a model containing elements and relationships, creates a single view, adds some styling, and uploads it to the Structurizr cloud service via the <a href="https://structurizr.com/help/web-api" target="_blank">JSON-based web API</a>.
                     Here's the resulting diagram when you open it in Structurizr, where the layout of the diagrams can be modified.
                 </p>
 
@@ -122,7 +122,7 @@
                     </div>
                     <div class="col-sm-4 centered">
                         <a href="https://structurizr.com/share/25441/diagrams" target="_blank"><img src="./img/getting-started-diagram-key.png" alt="A simple diagram" class="img-thumbnail" /></a>
-                        <div class="smaller" style="margin-top: 10px">A diagram key is automatically generated for you, based upon the <a href="https://structurizr.com/help/notation">styles</a> and <a href="https://structurizr.com/help/shapes">shapes</a> defined in the model.</div>
+                        <div class="smaller" style="margin-top: 10px">A diagram key is automatically generated for you, based upon the <a href="https://structurizr.com/help/notation" target="_blank">styles</a> and <a href="https://structurizr.com/help/shapes" target="_blank">shapes</a> defined in the model.</div>
                     </div>
                 </div>
         
@@ -135,24 +135,26 @@
                 <p>
                     Although using code to create simple diagrams might seem verbose when compared to static text-based approaches, the real power becomes evident when you start to think in terms of creating a <b>model</b>
                     of your software system, rather than a disconnected collection of static diagrams.
-                    Also, using code provides a number of unique opportunities over using a static textual description.
+                    Rather than copying and pasting elements to reuse them across multiple diagrams, a model-based approach lets you reuse an element across multiple views (diagrams).
+                    The result is that diagrams stay in sync when you rename elements.
                 </p>
         
                 <p>
-                    For example, rather than manually specifying which elements should be shown in a view, it's easy to do things like create a system context
-                    diagram for a software system, where only the immediately related elements are added. For example (with Java):
+                    Also, using code provides a number of unique opportunities over using a static textual description.
+                    For example, rather than explicitly specifying which elements should be shown on a diagram, it's easy to do things like
+                    "create a system context diagram for a software system, where only the immediately related elements are added".
+                    For example, with Structurizr for Java:
                 </p>
 
                 <br />
         
-                <pre><code class="codeSample">SystemContextView view = views.createSystemContextView(softwareSystem, "SystemContext", "...");
+                <pre><code class="codeSample">SystemContextView view = viewSet.createSystemContextView(softwareSystem, "SystemContext", "An example of a System Context diagram.");
 view.addNearestNeighbours(softwareSystem);</code></pre>
         
                 <br />
 
-                <h3>Software architecture diagrams as code</h3>
                 <p>
-                    With static text-based approaches (e.g. textual DSLs, JSON, YAML, etc), you would likely need to manually create each and every element, relationship, and diagram.
+                    With static text-based approaches (e.g. textual DSLs, JSON, YAML, etc), you likely need to manually create each and every element, relationship, and diagram.
                     With code, you can programmatically manipulate the model and views using the power of your programming language.
                 </p>
             </div>
@@ -162,8 +164,6 @@ view.addNearestNeighbours(softwareSystem);</code></pre>
             <div class="container">
                 <a name="Benefits"></a>
                 <h2>Benefits of using code to create software architecture models</h2>
-
-                <h3>Multiple output formats</h3>
                 <p>
                     Rather than argue over which diagramming tool you're going to use, why not use them all?
                     A huge benefit of creating software architecture models as code is that you can visualise the views in that model using <b>multiple output formats</b>.
@@ -185,12 +185,12 @@ view.addNearestNeighbours(softwareSystem);</code></pre>
                     <div class="col-sm-6 centered">
                         <img src="./img/code-output-3.png" alt="Structurizr" class="img-thumbnail" /></a>
                         <p class="smaller" style="margin-top: 5px">
-                            <a href="https://structurizr.com/share/1/diagrams#components">Structurizr (traditional diagram)</a>
+                            <a href="https://structurizr.com/share/1/diagrams#components" target="_blank">Structurizr (traditional diagram)</a>
                         </p>
         
                         <img src="./img/code-output-4.png" alt="Structurizr" class="img-thumbnail" /></a>
                         <p class="smaller" style="margin-top: 5px">
-                            <a href="https://structurizr.com/share/1/explore/graph?view=components">Structurizr (graph visualisation)</a>
+                            <a href="https://structurizr.com/share/1/explore/graph?view=components" target="_blank">Structurizr (graph visualisation)</a>
                         </p>
                     </div>
                 </div>
@@ -214,19 +214,19 @@ view.addNearestNeighbours(softwareSystem);</code></pre>
                     <div class="col-sm-6 centered">            
                         <img src="./img/code-output-7.png" alt="Structurizr" class="img-thumbnail" /></a>
                         <p class="smaller" style="margin-top: 5px">
-                            <a href="https://structurizr.com/share/1/diagrams#viewListOfVets">Structurizr (dynamic diagram)</a>
+                            <a href="https://structurizr.com/share/1/diagrams#viewListOfVets" target="_blank">Structurizr (dynamic diagram)</a>
                         </p>
                     </div>
                 </div>    
 
-                <h3>Other benefits</h3>
                 <p>
-                    Other benefits of using code to create software architecture models include:
+                    The benefits of using code to create software architecture models include:
                 </p>
         
                 <ul>
                     <li><b>Code is familiar</b>: Code is familiar to us as software developers, so let's take advantage of this rather than creating another language with which to represent a software architecture model.</li>
                     <li><b>Flexibility for creating models</b>: In addition to manually writing code to create a software architecture model, we can also write code to extract architectural concepts (e.g. components) from our production codebase using techniques such as reflection, introspection and static analysis.</li>
+                    <li><b>Multiple output formats</b>: Rather than being locked into a single tool, creating your model as code provides a way to export your views to multiple formats.</li>
                     <li><b>Flexibility for visualising models</b>: Writing code to create the views of a software architecture model provides you with the ability to slice and dice the model as needed. For example, showing all components for a large system will result in a very cluttered diagram.
                         Instead, you can simply write some code to programmatically create a number of smaller, simpler diagrams;
                         perhaps one per vertical slice, web controller, user story, etc. You can also opt to include or exclude any
@@ -268,20 +268,121 @@ view.addNearestNeighbours(softwareSystem);</code></pre>
                 <a name="Implementations"></a>
                 <h2>Implementations</h2>
                 <p>
-                    The following implementations support the core concepts, and are all compatible with the <a href="https://structurizr.com/help/web-api">Structurizr web API</a> via an intermediary JSON format.
+                    The following implementations support the core concepts of the C4 model, and are compatible with the <a href="https://structurizr.com/help/web-api" target="_blank">web API</a> used by the <a href="https://structurizr.com" target="_blank">Structurizr cloud service and on-premises installation</a>, via an intermediary JSON format.
+                    Some client library implementations also provide support for other diagram output formats.
+                    All are open source.
                 </p>
-        
-                <ul>
-                    <li><a href="https://github.com/structurizr/java">Java</a></li>
-                    <li><a href="https://github.com/structurizr/dotnet">.NET (core and framework)</a></li>
-                    <li><a href="https://github.com/ChristianEder/structurizr-typescript">TypeScript</a></li>
-                    <li><a href="https://github.com/structurizr-php/structurizr-php">PHP</a></li>
-                    <li><a href="https://github.com/Midnighter/structurizr-python">Python</a></li>
-                    <li><a href="https://github.com/trilogy-group/arch-as-code">Arch as code (YAML)</a></li>
-                </ul>
 
+                <br />
+
+                <table class="table table-striped">
+                    <tr>
+                        <th>Library</th>
+                        <th>Input formats <div class="smaller">(create models using)</div></th>
+                        <th>Output formats <div class="smaller">(render diagrams using)</div></th>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">
+                            Structurizr for Java
+                            <div class="small">
+                                <a href="https://github.com/structurizr/java" target="_blank">https://github.com/structurizr/java</a>
+                            </div>
+                        </td>
+                        <td>
+                            Java and other JVM compatible languages
+                            <div class="small">(e.g. Groovy, Kotlin, Scala)</div>
+                        </td>
+                        <td>
+                            Structurizr cloud service and on-premises installation,
+                            <div class="small">
+                                plus 
+                                <a href="https://github.com/structurizr/java-extensions/blob/master/structurizr-plantuml/src/com/structurizr/io/plantuml/PlantUMLWriter.java" target=_blank">PlantUML</a>,
+                                <a href="https://github.com/structurizr/java-extensions/blob/master/structurizr-plantuml/src/com/structurizr/io/plantuml/C4PlantUMLWriter.java" target=_blank">C4PlantUML</a>,
+                                <a href="https://github.com/structurizr/java-extensions/blob/master/structurizr-websequencediagrams/src/com/structurizr/io/websequencediagrams/WebSequenceDiagramsWriter.java" target=_blank">WebSequenceDiagrams</a>,
+                                <a href="https://github.com/structurizr/java-extensions/blob/master/structurizr-mermaid/src/com/structurizr/io/mermaid/MermaidWriter.java" target="_blank">Mermaid</a> (experimental), and
+                                <a href="https://github.com/structurizr/java-extensions/blob/master/structurizr-dot/src/com/structurizr/io/dot/DotWriter.java" target=_blank">DOT/Graphviz</a>
+                                </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">
+                            Structurizr for .NET
+                            <div class="small">
+                                <a href="https://github.com/structurizr/dotnet" target="_blank">https://github.com/structurizr/dotnet</a>
+                            </div>
+                        </td>
+                        <td>
+                            .NET compatible languages
+                            <div class="small">(Framework and Core)</div>
+                        </td>
+                        <td>
+                            Structurizr cloud service and on-premises installation,
+                            <div class="small">
+                                plus 
+                                <a href="https://github.com/structurizr/dotnet-extensions/blob/master/Structurizr.PlantUML/IO/PlantUML/PlantUMLWriter.cs" target=_blank">PlantUML</a>, and
+                                <a href="https://github.com/structurizr/dotnet-extensions/blob/master/Structurizr.PlantUML/IO/C4PlantUML/C4PlantUmlWriter.cs" target=_blank">C4PlantUML</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">
+                            Structurizr for TypeScript
+                            <div class="small">
+                                <a href="https://github.com/ChristianEder/structurizr-typescript" target="_blank">https://github.com/ChristianEder/structurizr-typescript</a>
+                            </div>
+                        </td>
+                        <td>TypeScript</td>
+                        <td>
+                            Structurizr cloud service and on-premises installation
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">
+                            Structurizr for PHP
+                            <div class="small">
+                                <a href="https://github.com/structurizr-php/structurizr-php" target="_blank">https://github.com/structurizr-php/structurizr-php</a>
+                            </div>
+                        </td>
+                        <td>PHP</td>
+                        <td>
+                            Structurizr cloud service and on-premises installation
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">
+                            Structurizr for Python
+                            <div class="small">
+                                <a href="https://github.com/Midnighter/structurizr-python" target="_blank">https://github.com/Midnighter/structurizr-python</a>
+                            </div>
+                        </td>
+                        <td>Python</td>
+                        <td>
+                            Structurizr cloud service and on-premises installation
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td style="white-space: nowrap">
+                            Arch as code
+                            <div class="small">
+                                <a href="https://github.com/trilogy-group/arch-as-code" target="_blank">https://github.com/trilogy-group/arch-as-code</a>
+                            </div>
+                        </td>
+                        <td>YAML</td>
+                        <td>
+                            Structurizr cloud service and on-premises installation
+                        </td>
+                    </tr>
+
+                </table>
+        
                 <p>
-                    See the GitHub repos linked above for code examples.
+                    See the GitHub repos linked above for getting started guides and code examples.
                 </p>
             </div>
         </div>
